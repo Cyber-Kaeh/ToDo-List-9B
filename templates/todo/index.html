@@ -1,0 +1,34 @@
+{#{% extends "base.html" %}#}
+{#{% block content %}#}
+{#<body>#}
+{#    <h1>Things to do:</h1>#}
+{#<table>#}
+{#    {% for item in object_list %}#}
+{#    <tr>#}
+{#        <td><input type="checkbox" id="todo_ids" name="item" value="{{ item.id }}"> </td>#}
+{#        <td>{{ item.text }}</td>#}
+{#        <td>{{ item.due_date }}</td>#}
+{#    </tr>#}
+{#    {% endfor %}#}
+{#</table>#}
+{##}
+{#{% endblock %}#}
+
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Things to do:</h1>
+<form method="post" action="{% url 'delete_todos' %}">
+    {% csrf_token %}
+    <table>
+        {% for item in object_list %}
+        <tr>
+            <td><input type="checkbox" name="todo_ids" value="{{ item.id }}"></td>
+            <td>{{ item.text }}</td>
+            <td>{{ item.due_date }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <button type="submit" class="button">Delete Selected</button>
+</form>
+{% endblock %}

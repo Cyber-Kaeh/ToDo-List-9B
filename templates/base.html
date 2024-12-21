@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    <title>ToDo List 9B</title>
+</head>
+<body>
+    <div>
+        <a href="{% url "index" %}" class="button">All tasks</a>
+        <a href="{% url "today" %}" class="button">Today</a>
+        <a href="{% url "add_task" %}" class="button">New Task</a>
+    </div>
+    {% block content %}{% endblock %}
+</body>
+</html>
