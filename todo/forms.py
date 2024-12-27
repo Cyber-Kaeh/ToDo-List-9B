@@ -8,5 +8,12 @@ class TaskForm(forms.ModelForm):
         model = ToDoItem
         fields = ('text', 'due_date')
         widgets = {
-            "due_date": forms.DateInput(attrs={'type': 'date'}),
+            'text': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Enter new task...',
+            }),
+            'due_date': forms.DateInput(attrs={
+                'type': 'date',
+                'class': 'form-control',
+            }),
         }
