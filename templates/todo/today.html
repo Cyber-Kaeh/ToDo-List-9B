@@ -1,11 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>Things to do today:</h1>
-    <table>
+<div class="container my-4">
+    <h1 class="text-start mb-4 text-light">Things to do today:</h1>
+    <div class="table-responsive">
+        <table class="table table-bordered table-dark table-hover table-striped align-middle">
         {% for item in object_list %}
         <tr>
             <td>{{ item.text }}</td>
         </tr>
         {% endfor %}
     </table>
+    </div>
+</div>
 {% endblock %}

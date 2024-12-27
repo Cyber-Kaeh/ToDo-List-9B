@@ -5,18 +5,17 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-{#    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">#}
     <title>ToDo List 9B</title>
     {% load bootstrap5 %}
     {% bootstrap_css %}
     {% bootstrap_javascript %}
 </head>
-<body>
+<body style="background: #252525;">
     <div class="container text-center" style="margin-top: 20px;">
         <div>
-        <a href="{% url "index" %}" class="btn btn-primary">All tasks</a>
-        <a href="{% url "today" %}" class="btn btn-primary">Today</a>
-        <a href="{% url "add_task" %}" class="btn btn-primary">New Task</a>
+        <a href="{% url "index" %}" class="btn btn-outline-secondary">All tasks</a>
+        <a href="{% url "today" %}" class="btn btn-outline-secondary">Today</a>
+        <a href="{% url "add_task" %}" class="btn btn-outline-secondary">New Task</a>
     </div>
     {% block content %}{% endblock %}
     </div>

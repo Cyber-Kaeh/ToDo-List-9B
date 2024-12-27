@@ -3,11 +3,11 @@
 
 {% block content %}
 <div class="container my-4">
-    <h1 class="text-center mb-4">Things to do:</h1>
+    <h1 class="text-start mb-4 text-light">Things to do</h1>
     <form method="post" action="{% url 'delete_todos' %}">
     {% csrf_token %}
     <div class="table-responsive">
-        <table class="table table-striped table-hover align-middle">
+        <table class="table table-bordered table-dark table-striped table-hover align-middle">
             <thead class="table-dark">
                 <tr>
                     <th scope="col" style="width: 5%;">Select</th>
@@ -28,7 +28,7 @@
         </table>
     </div>
     <div class="d-flex justify-content-start">
-        <button type="submit" class="btn btn-danger">Delete Selected</button>
+        <button type="submit" class="btn btn-outline-danger">Delete Selected</button>
     </div>
 </form>
 </div>
