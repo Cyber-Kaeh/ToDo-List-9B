@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-9c*(8atg2%-+=v-su5ucg+asv=lt7ow7=ro0&21bv49-7j@+33
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# SECURITY WARNING: Remove * when done testing in local network!
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'todo.apps.TodoConfig',
+    'bootstrap5',
 ]
 
 MIDDLEWARE = [
