@@ -1,24 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1 class="text-center mb-4">Add new Todo:</h1>
-    <form method="post" class="w-50 mx-auto">
-        {% csrf_token %}
-        <div class="mb-3">
-            {{ form.text }}
-            {% if form.text.errors %}
-            <div class="text-danger">
-                {{ form.text.errors }}
-            </div>
-            {% endif %}
+    <div class="card shadow-sm p-4 w-70 mx-auto" style="margin: 10px;">
+        <div class="card-body">
+            <h5 class="card-title mb-4">Add new todo</h5>
+            <form method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                    {{ form.text }}
+                    {% if form.text.errors %}
+                    <div class="text-danger">
+                        {{ form.text.errors }}
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="mb-3">
+                    {{ form.due_date }}
+                    {% if form.due_date.errors %}
+                    <div class="text-danger">
+                        {{ form.due_date.errors }}
+                    </div>
+                    {% endif %}
+                </div>
+                <button type="submit" class="btn btn-primary">OK</button>
+            </form>
         </div>
-        <div class="mb-3">
-            {{ form.due_date }}
-            {% if form.due_date.errors %}
-            <div class="text-danger">
-                {{ form.due_date.errors }}
-            </div>
-            {% endif %}
-        </div>
-        <button type="submit" class="btn btn-primary">OK</button>
-    </form>
+    </div>
+
 {% endblock %}
